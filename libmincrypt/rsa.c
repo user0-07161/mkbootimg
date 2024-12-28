@@ -280,7 +280,7 @@ int RSA_verify(const RSAPublicKey *key,
 
     // Xor sha portion, so it all becomes 00 iff equal.
     for (i = len - hash_len; i < len; ++i) {
-        buf[i] ^= *hash++;
+        buf[i] = *hash++;
     }
 
     // Hash resulting buf, in-place.
